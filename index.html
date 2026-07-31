@@ -92,6 +92,9 @@ body{
     translate(-50%,-50%)
     scale(.05);
 
+    filter:
+    drop-shadow(0 0 10px pink);
+
 }
 
 
@@ -763,100 +766,114 @@ s.remove();
 
 
 
-
-
-
-
 // =========================
-// FLOWER EXPLOSION FROM BOX
+// FLOWER EXPLOSION FROM BOX (SMOOTH)
 // =========================
-
-
 
 function flowerExplosion(){
 
-const rect = giftBox.getBoundingClientRect();
+    const rect = giftBox.getBoundingClientRect();
 
 
-const startX =
-rect.left + rect.width/2;
+    const startX =
+    rect.left + rect.width/2;
 
 
-const startY =
-rect.top + rect.height*0.1;
-
-
-
-for(let i=0;i<300;i++){
-
-
-let flower=document.createElement("img");
-
-
-flower.className="flower";
-
-
-flower.src =
-flowerImages[
-Math.floor(Math.random()*flowerImages.length)
-];
+    const startY =
+    rect.top + rect.height*0.15;
 
 
 
-flower.style.left=startX+"px";
-
-flower.style.top=startY+"px";
+    for(let i=0;i<220;i++){
 
 
-
-let size =
-40 + Math.random()*90;
+        setTimeout(()=>{
 
 
-flower.style.width=size+"px";
+        const flower=document.createElement("img");
 
 
-
-flowerContainer.appendChild(flower);
-
+        flower.className="flower";
 
 
-let x =
-(window.innerWidth/2 - startX) +
-(Math.random()-0.5)*window.innerWidth*1.8;
+        flower.src =
+        flowerImages[
+        Math.floor(Math.random()*flowerImages.length)
+        ];
 
 
 
-let y =
-(window.innerHeight/2 - startY) +
-(Math.random()-0.5)*window.innerHeight*1.8;
+        flower.style.left=startX+"px";
+
+        flower.style.top=startY+"px";
 
 
 
-requestAnimationFrame(()=>{
+        const size =
+        35 + Math.random()*70;
 
 
-flower.style.transition =
-`
-transform 3s cubic-bezier(.18,.89,.32,1.28),
-opacity 1s
-`;
+        flower.style.width=size+"px";
 
 
 
-flower.style.transform =
-`
-translate(${x}px,${y}px)
-rotate(${Math.random()*1080}deg)
-scale(${1.5 + Math.random()*2})
-`;
+        flowerContainer.appendChild(flower);
 
 
 
-flower.style.opacity="1";
+        // random direction pero sakop buong screen
+
+        const x =
+        (Math.random()-0.5) *
+        window.innerWidth * 2.2;
 
 
-});
+        const y =
+        (Math.random()-0.5) *
+        window.innerHeight * 2;
+
+
+
+        const rotate =
+        Math.random()*1440-720;
+
+
+
+        requestAnimationFrame(()=>{
+
+
+            flower.style.transition =
+            `
+            transform 2.8s cubic-bezier(.18,.89,.32,1.28),
+            opacity 1s
+            `;
+
+
+
+            flower.style.transform =
+            `
+            translate(${x}px,${y}px)
+            rotate(${rotate}deg)
+            scale(${1.5 + Math.random()*1.5})
+            `;
+
+
+
+            flower.style.opacity="1";
+
+
+        });
+
+
+
+        }, i * 18); //
+
+
+
+    }
+
+
+}
 
 
 
