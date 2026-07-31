@@ -772,15 +772,138 @@ s.remove();
 // =========================
 
 
+
 function flowerExplosion(){
 
-
-const rect =
-giftBox.getBoundingClientRect();
-
+const rect = giftBox.getBoundingClientRect();
 
 
 const startX =
+rect.left + rect.width/2;
+
+
+const startY =
+rect.top + rect.height*0.1;
+
+
+
+for(let i=0;i<300;i++){
+
+
+let flower=document.createElement("img");
+
+
+flower.className="flower";
+
+
+flower.src =
+flowerImages[
+Math.floor(Math.random()*flowerImages.length)
+];
+
+
+
+flower.style.left=startX+"px";
+
+flower.style.top=startY+"px";
+
+
+
+let size =
+40 + Math.random()*90;
+
+
+flower.style.width=size+"px";
+
+
+
+flowerContainer.appendChild(flower);
+
+
+
+let x =
+(window.innerWidth/2 - startX) +
+(Math.random()-0.5)*window.innerWidth*1.8;
+
+
+
+let y =
+(window.innerHeight/2 - startY) +
+(Math.random()-0.5)*window.innerHeight*1.8;
+
+
+
+requestAnimationFrame(()=>{
+
+
+flower.style.transition =
+`
+transform 3s cubic-bezier(.18,.89,.32,1.28),
+opacity 1s
+`;
+
+
+
+flower.style.transform =
+`
+translate(${x}px,${y}px)
+rotate(${Math.random()*1080}deg)
+scale(${1.5 + Math.random()*2})
+`;
+
+
+
+flower.style.opacity="1";
+
+
+});
+
+
+
+setTimeout(()=>{
+
+
+flower.style.opacity="1";
+
+
+},3000);
+
+
+
+}
+
+}
+
+
+flower.style.transform =
+`
+translate(${x}px,${y}px)
+rotate(${Math.random()*1080}deg)
+scale(${1.5 + Math.random()*2})
+`;
+
+
+
+flower.style.opacity="1";
+
+
+});
+
+
+
+setTimeout(()=>{
+
+
+flower.style.opacity="1";
+
+
+},3000);
+
+
+
+}
+
+}
 rect.left + rect.width/2;
 
 
