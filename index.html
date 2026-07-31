@@ -191,7 +191,11 @@ body{
 
 }
 
+#flowerContainer{
 
+    transition:2s ease;
+
+}
 
 </style>
 
@@ -896,18 +900,42 @@ flowerExplosion();
 setTimeout(()=>{
 
 
-giftSection.style.transition="1s";
+// fade out flowers muna
 
+flowerContainer.style.transition="2s";
 
-giftSection.style.opacity="0";
-
-
-giftSection.style.transform=
-"translate(-50%,-50%) scale(.3)";
+flowerContainer.style.opacity="0";
 
 
 
-},3500);
+setTimeout(()=>{
+
+
+giftSection.style.display="none";
+
+flowerContainer.style.opacity="1";
+
+
+
+envelopeSection.style.display="flex";
+
+
+
+setTimeout(()=>{
+
+
+envelopeSection.style.opacity="1";
+
+
+},100);
+
+
+
+},2000);
+
+
+
+},9000);
 
 
 
