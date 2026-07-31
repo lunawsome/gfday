@@ -1,192 +1,203 @@
-// ==============================
-// SPARKLES
-// ==============================
+<!DOCTYPE html>
+<html lang="en">
 
-function createSparkles(x,y){
+<head>
 
-    for(let i=0;i<35;i++){
+<meta charset="UTF-8">
 
-        const spark=document.createElement("div");
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        spark.style.position="fixed";
 
-        spark.style.left=x+"px";
+<title>For Cielo ❤️</title>
 
-        spark.style.top=y+"px";
 
-        spark.style.width=(4+Math.random()*6)+"px";
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-        spark.style.height=spark.style.width;
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        spark.style.borderRadius="50%";
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        spark.style.background="white";
 
-        spark.style.boxShadow="0 0 12px #fff";
 
-        spark.style.pointerEvents="none";
+<style>
 
-        spark.style.zIndex="100";
 
-        document.body.appendChild(spark);
+/* CSS PART 2 ILALAGAY DITO */
 
-        const angle=Math.random()*Math.PI*2;
 
-        const distance=80+Math.random()*180;
+</style>
 
-        const dx=Math.cos(angle)*distance;
 
-        const dy=Math.sin(angle)*distance;
+</head>
 
-        requestAnimationFrame(()=>{
 
-            spark.style.transition="all 1s ease-out";
+<body>
 
-            spark.style.transform=
-            `translate(${dx}px,${dy}px)`;
 
-            spark.style.opacity="0";
 
-        });
+<!-- =========================
+BACKGROUND
+========================= -->
 
-        setTimeout(()=>{
 
-            spark.remove();
+<div class="background"></div>
 
-        },1000);
 
-    }
 
-}
 
+<!-- =========================
+FLOWERS
+========================= -->
 
-// ==============================
-// ADD SPARKLES TO GIFT
-// ==============================
 
-giftBox.addEventListener("click",()=>{
+<div id="flowerContainer"></div>
 
-    const rect=giftBox.getBoundingClientRect();
 
-    createSparkles(
 
-        rect.left+rect.width/2,
 
-        rect.top+rect.height/3
 
-    );
+<!-- =========================
+GIFT
+========================= -->
 
-});
 
+<div id="giftSection">
 
-// ==============================
-// LETTER SLIDE EFFECT
-// ==============================
 
-function showLetter(){
+    <img
+    id="giftBox"
+    src="giftbox.PNG"
+    alt="Gift Box">
 
-    letterSection.style.display="flex";
 
-    letterCard.classList.remove("show");
+    <p id="giftText">
+        Open your surprise 🎁
+    </p>
 
-    letterCard.style.transform="translateY(220px) scale(.7)";
 
-    letterCard.style.opacity="0";
+</div>
 
-    setTimeout(()=>{
 
-        letterSection.style.opacity="1";
 
-    },50);
 
-    setTimeout(()=>{
 
-        letterCard.classList.add("show");
 
-    },300);
+<!-- =========================
+BOUQUET MESSAGE
+========================= -->
 
-}
 
+<div id="flowerMessage">
 
-// ==============================
-// HEART CONFETTI
-// ==============================
+    Flowers for you 🌹
 
-function heartBurst(){
+</div>
 
-    for(let i=0;i<20;i++){
 
-        const heart=document.createElement("div");
 
-        heart.innerHTML="❤";
 
-        heart.style.position="fixed";
 
-        heart.style.left=(window.innerWidth/2)+"px";
 
-        heart.style.top="120px";
 
-        heart.style.fontSize=(20+Math.random()*20)+"px";
+<!-- =========================
+ENVELOPE
+========================= -->
 
-        heart.style.color="hotpink";
 
-        heart.style.pointerEvents="none";
+<div id="envelopeSection">
 
-        heart.style.zIndex="200";
 
-        document.body.appendChild(heart);
+    <img
+    id="envelope"
+    src="envelope.PNG"
+    alt="Envelope">
 
-        const angle=Math.random()*Math.PI*2;
 
-        const distance=120+Math.random()*220;
+    <p id="envelopeText">
 
-        const x=Math.cos(angle)*distance;
+        A letter for you 💌
 
-        const y=Math.sin(angle)*distance;
+    </p>
 
-        requestAnimationFrame(()=>{
 
-            heart.style.transition="all 2s ease-out";
+</div>
 
-            heart.style.transform=
-            `translate(${x}px,${y}px) rotate(${Math.random()*720}deg)`;
 
-            heart.style.opacity="0";
 
-        });
 
-        setTimeout(()=>{
 
-            heart.remove();
 
-        },2000);
+<!-- =========================
+LETTER
+========================= -->
 
-    }
 
-}
+<div id="letterSection">
 
 
-// ==============================
-// SHOW HEARTS WHEN LETTER OPENS
-// ==============================
+    <div id="letterCard">
 
-const originalShowLetter=showLetter;
 
-showLetter=function(){
 
-    originalShowLetter();
+        <img
+        id="letterImage"
+        src="letter.PNG"
+        alt="Letter">
 
-    setTimeout(()=>{
 
-        heartBurst();
 
-    },500);
+        <div id="letterContent">
 
-}
 
-/* =======================================
+            <h1>
+
+                Happy National Girlfriend's Day ❤️
+
+            </h1>
+
+
+
+            <p>
+
+                Forever grateful to have you as my girlfriend.
+                I love you so much, hon.
+
+            </p>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+/* JAVASCRIPT PART 3 ILALAGAY DITO */
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
+
+<style>
+    /* =========================
 RESET
-======================================= */
+========================= */
 
 *{
     margin:0;
@@ -194,39 +205,53 @@ RESET
     box-sizing:border-box;
 }
 
+
 html,
 body{
 
     width:100%;
     height:100%;
+
     overflow:hidden;
 
     font-family:'Poppins',sans-serif;
 
 }
 
-/* =======================================
+
+
+
+/* =========================
 BACKGROUND
-======================================= */
+========================= */
+
 
 .background{
 
     position:fixed;
+
     inset:0;
 
     background:url("bg.JPEG");
 
     background-size:cover;
+
     background-position:center;
-    background-repeat:no-repeat;
 
     z-index:-10;
 
 }
 
-/* =======================================
-FLOWERS
-======================================= */
+
+
+
+
+
+
+/* =========================
+FLOWER CONTAINER
+========================= */
+
 
 #flowerContainer{
 
@@ -242,59 +267,62 @@ FLOWERS
 
 }
 
+
+
+
 .flower{
 
     position:absolute;
 
     opacity:0;
 
-    transform:translate(-50%,-50%) scale(.05);
+    transform:
+    translate(-50%,-50%)
+    scale(.1);
 
     will-change:transform,opacity;
 
 }
 
-/* =======================================
-SPARKLES
-======================================= */
 
-#sparkleContainer{
 
-    position:fixed;
 
-    inset:0;
 
-    pointer-events:none;
 
-    z-index:25;
 
-}
 
-/* =======================================
+/* =========================
 GIFT
-======================================= */
+========================= */
+
 
 #giftSection{
 
     position:absolute;
 
-    left:50%;
-
     top:50%;
 
-    transform:translate(-50%,-50%);
+    left:50%;
+
+
+    transform:
+    translate(-50%,-50%);
+
 
     display:flex;
 
     flex-direction:column;
 
-    justify-content:center;
-
     align-items:center;
 
-    z-index:10;
+
+    z-index:20;
 
 }
+
+
+
+
 
 #giftBox{
 
@@ -304,29 +332,46 @@ GIFT
 
     user-select:none;
 
-    animation:giftFloat 2s ease-in-out infinite;
 
-    transition:.45s;
+    animation:
+    giftFloat 2s infinite ease-in-out;
+
+
+    transition:1s;
 
 }
+
+
+
 
 #giftBox.open{
 
+
     animation:none;
 
-    transform:scale(1.08);
 
-    filter:drop-shadow(0 0 35px #ff4da6);
+    transform:
+    scale(1.15);
+
+
+    filter:
+    drop-shadow(0 0 40px pink);
 
 }
 
+
+
+
+
 @keyframes giftFloat{
 
-    0%{
+
+    0%,100%{
 
         transform:translateY(0);
 
     }
+
 
     50%{
 
@@ -334,300 +379,438 @@ GIFT
 
     }
 
-    100%{
+
+}
+
+
+
+
+
+
+#giftText{
+
+
+    margin-top:20px;
+
+
+    color:white;
+
+
+    font-size:22px;
+
+
+    font-weight:600;
+
+
+    text-shadow:
+
+    0 0 10px hotpink,
+
+    0 0 20px hotpink;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+FLOWER MESSAGE
+========================= */
+
+
+#flowerMessage{
+
+
+    position:fixed;
+
+
+    top:70%;
+
+
+    left:50%;
+
+
+    transform:
+    translate(-50%,-50%);
+
+
+    color:white;
+
+
+    font-size:35px;
+
+
+    font-family:'Great Vibes',cursive;
+
+
+    opacity:0;
+
+
+    z-index:60;
+
+
+    text-shadow:
+
+    0 0 15px pink,
+
+    0 0 30px pink;
+
+
+    transition:1s;
+
+}
+
+
+
+
+
+
+
+/* =========================
+ENVELOPE
+========================= */
+
+
+#envelopeSection{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    display:none;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    opacity:0;
+
+
+    z-index:50;
+
+
+    transition:1s;
+
+}
+
+
+
+
+
+
+#envelope{
+
+
+    width:220px;
+
+
+    cursor:pointer;
+
+
+    animation:
+    envelopeFloat 2.5s infinite ease-in-out;
+
+
+    transition:1s;
+
+
+}
+
+
+
+
+
+@keyframes envelopeFloat{
+
+
+    0%,100%{
 
         transform:translateY(0);
 
     }
 
-}
-
-#giftText{
-
-    margin-top:24px;
-
-    color:white;
-
-    font-size:22px;
-
-    font-weight:600;
-
-    text-shadow:
-
-    0 0 10px hotpink,
-
-    0 0 20px hotpink;
-
-    animation:giftBlink 2s infinite;
-
-}
-
-@keyframes giftBlink{
-
-    0%,100%{
-
-        opacity:1;
-
-    }
 
     50%{
 
-        opacity:.45;
+        transform:translateY(-15px);
 
     }
 
-}
-
-/* =======================================
-ENVELOPE
-======================================= */
-
-#envelopeSection{
-
-    position:absolute;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
-
-    opacity:0;
-
-    transition:opacity .8s ease;
-
-    z-index:20;
 
 }
 
-#envelope{
 
-    width:220px;
 
-    cursor:pointer;
 
-    user-select:none;
 
-    transition:.4s;
-
-    animation:envelopeFloat 2.5s ease-in-out infinite;
-
-}
-
-#envelope:hover{
-
-    transform:scale(1.05);
-
-}
-
-@keyframes envelopeFloat{
-
-    0%{
-
-        transform:translateY(0px);
-
-    }
-
-    50%{
-
-        transform:translateY(-12px);
-
-    }
-
-    100%{
-
-        transform:translateY(0px);
-
-    }
-
-}
 
 #envelopeText{
 
+
     margin-top:20px;
+
 
     color:white;
 
+
     font-size:20px;
+
 
     font-weight:600;
 
+
     text-shadow:
 
-    0 0 10px hotpink,
+    0 0 10px pink,
 
-    0 0 20px hotpink;
+    0 0 20px pink;
+
 
 }
 
-/* =======================================
+
+
+
+
+
+
+
+
+/* =========================
 LETTER
-======================================= */
+========================= */
+
 
 #letterSection{
 
+
     position:fixed;
+
 
     inset:0;
 
+
     display:none;
+
 
     justify-content:center;
 
+
     align-items:center;
 
-    background:rgba(0,0,0,.45);
+
+    background:
+    rgba(0,0,0,.45);
+
 
     opacity:0;
 
-    transition:opacity .8s ease;
 
-    z-index:50;
+    z-index:100;
+
+
+    transition:1s;
 
 }
+
+
+
+
+
 
 #letterCard{
 
+
     position:relative;
+
 
     width:90%;
 
-    max-width:720px;
 
-    transform:translateY(260px) scale(.8);
+    max-width:700px;
+
+
+    transform:
+    translateY(250px)
+    scale(.7);
+
 
     opacity:0;
 
-    transition:all .9s cubic-bezier(.18,.89,.32,1.28);
+
+    transition:
+    1s cubic-bezier(.18,.89,.32,1.28);
+
 
 }
 
+
+
+
+
+
+
 #letterCard.show{
 
-    transform:translateY(0px) scale(1);
+
+    transform:
+    translateY(0)
+    scale(1);
+
 
     opacity:1;
 
 }
 
+
+
+
+
 #letterImage{
+
 
     width:100%;
 
+
     display:block;
+
 
     border-radius:20px;
 
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.4);
 
 }
+
+
+
+
 
 #letterContent{
 
+
     position:absolute;
+
 
     inset:0;
 
+
     display:flex;
+
 
     flex-direction:column;
 
+
     justify-content:center;
+
 
     align-items:center;
 
+
     text-align:center;
+
 
     padding:60px;
 
+
 }
+
+
+
+
+
+
 
 #letterContent h1{
 
-    font-family:"Great Vibes",cursive;
 
-    font-size:58px;
+    font-family:'Great Vibes',cursive;
+
+
+    font-size:55px;
+
 
     color:#ff2e87;
 
-    margin-bottom:25px;
 
-    text-shadow:0 0 12px rgba(255,255,255,.8);
+    text-shadow:
+
+    0 0 10px white;
+
 
 }
+
+
+
+
+
+
 
 #letterContent p{
 
+
+    margin-top:25px;
+
+
     max-width:80%;
 
-    color:#444;
 
     font-size:22px;
 
-    line-height:1.8;
 
-    font-weight:500;
+    line-height:1.7;
 
-}
 
-/* =======================================
-PHONE
-======================================= */
+    color:#444;
 
-@media(max-width:768px){
-
-    #giftBox{
-
-        width:180px;
-
-    }
-
-    #envelope{
-
-        width:180px;
-
-    }
-
-    #giftText,
-    #envelopeText{
-
-        font-size:18px;
-
-    }
-
-    #letterContent{
-
-        padding:35px;
-
-    }
-
-    #letterContent h1{
-
-        font-size:38px;
-
-    }
-
-    #letterContent p{
-
-        font-size:17px;
-
-        max-width:95%;
-
-    }
 
 }
 
-@media(max-width:430px){
+
+
+
+
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:600px){
+
 
     #giftBox{
 
-        width:155px;
+        width:160px;
 
     }
+
+
+
+    #flowerMessage{
+
+        font-size:30px;
+
+    }
+
+
 
     #envelope{
 
@@ -635,168 +818,683 @@ PHONE
 
     }
 
+
+
     #letterContent{
 
-        padding:28px;
+        padding:30px;
 
     }
 
+
+
     #letterContent h1{
+
+        font-size:32px;
+
+    }
+
+
+
+    #letterContent p{
+
+        font-size:16px;
+
+    }
+
+
+}
+</style>
+
+<script>
+
+    /* =========================
+RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+
+
+/* =========================
+BACKGROUND
+========================= */
+
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:url("bg.JPEG");
+
+    background-size:cover;
+
+    background-position:center;
+
+    z-index:-10;
+
+}
+
+
+
+
+
+
+
+/* =========================
+FLOWER CONTAINER
+========================= */
+
+
+#flowerContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:30;
+
+}
+
+
+
+
+.flower{
+
+    position:absolute;
+
+    opacity:0;
+
+    transform:
+    translate(-50%,-50%)
+    scale(.1);
+
+    will-change:transform,opacity;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+GIFT
+========================= */
+
+
+#giftSection{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+
+    transform:
+    translate(-50%,-50%);
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+
+    z-index:20;
+
+}
+
+
+
+
+
+#giftBox{
+
+    width:240px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+
+    animation:
+    giftFloat 2s infinite ease-in-out;
+
+
+    transition:1s;
+
+}
+
+
+
+
+#giftBox.open{
+
+
+    animation:none;
+
+
+    transform:
+    scale(1.15);
+
+
+    filter:
+    drop-shadow(0 0 40px pink);
+
+}
+
+
+
+
+
+@keyframes giftFloat{
+
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+
+}
+
+
+
+
+
+
+#giftText{
+
+
+    margin-top:20px;
+
+
+    color:white;
+
+
+    font-size:22px;
+
+
+    font-weight:600;
+
+
+    text-shadow:
+
+    0 0 10px hotpink,
+
+    0 0 20px hotpink;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+FLOWER MESSAGE
+========================= */
+
+
+#flowerMessage{
+
+
+    position:fixed;
+
+
+    top:70%;
+
+
+    left:50%;
+
+
+    transform:
+    translate(-50%,-50%);
+
+
+    color:white;
+
+
+    font-size:35px;
+
+
+    font-family:'Great Vibes',cursive;
+
+
+    opacity:0;
+
+
+    z-index:60;
+
+
+    text-shadow:
+
+    0 0 15px pink,
+
+    0 0 30px pink;
+
+
+    transition:1s;
+
+}
+
+
+
+
+
+
+
+/* =========================
+ENVELOPE
+========================= */
+
+
+#envelopeSection{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    display:none;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    opacity:0;
+
+
+    z-index:50;
+
+
+    transition:1s;
+
+}
+
+
+
+
+
+
+#envelope{
+
+
+    width:220px;
+
+
+    cursor:pointer;
+
+
+    animation:
+    envelopeFloat 2.5s infinite ease-in-out;
+
+
+    transition:1s;
+
+
+}
+
+
+
+
+
+@keyframes envelopeFloat{
+
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+
+}
+
+
+
+
+
+
+#envelopeText{
+
+
+    margin-top:20px;
+
+
+    color:white;
+
+
+    font-size:20px;
+
+
+    font-weight:600;
+
+
+    text-shadow:
+
+    0 0 10px pink,
+
+    0 0 20px pink;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+LETTER
+========================= */
+
+
+#letterSection{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    display:none;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    background:
+    rgba(0,0,0,.45);
+
+
+    opacity:0;
+
+
+    z-index:100;
+
+
+    transition:1s;
+
+}
+
+
+
+
+
+
+#letterCard{
+
+
+    position:relative;
+
+
+    width:90%;
+
+
+    max-width:700px;
+
+
+    transform:
+    translateY(250px)
+    scale(.7);
+
+
+    opacity:0;
+
+
+    transition:
+    1s cubic-bezier(.18,.89,.32,1.28);
+
+
+}
+
+
+
+
+
+
+
+#letterCard.show{
+
+
+    transform:
+    translateY(0)
+    scale(1);
+
+
+    opacity:1;
+
+}
+
+
+
+
+
+#letterImage{
+
+
+    width:100%;
+
+
+    display:block;
+
+
+    border-radius:20px;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.4);
+
+}
+
+
+
+
+
+#letterContent{
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    text-align:center;
+
+
+    padding:60px;
+
+
+}
+
+
+
+
+
+
+
+#letterContent h1{
+
+
+    font-family:'Great Vibes',cursive;
+
+
+    font-size:55px;
+
+
+    color:#ff2e87;
+
+
+    text-shadow:
+
+    0 0 10px white;
+
+
+}
+
+
+
+
+
+
+
+#letterContent p{
+
+
+    margin-top:25px;
+
+
+    max-width:80%;
+
+
+    font-size:22px;
+
+
+    line-height:1.7;
+
+
+    color:#444;
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:600px){
+
+
+    #giftBox{
+
+        width:160px;
+
+    }
+
+
+
+    #flowerMessage{
 
         font-size:30px;
 
     }
 
+
+
+    #envelope{
+
+        width:160px;
+
+    }
+
+
+
+    #letterContent{
+
+        padding:30px;
+
+    }
+
+
+
+    #letterContent h1{
+
+        font-size:32px;
+
+    }
+
+
+
     #letterContent p{
 
-        font-size:15px;
+        font-size:16px;
 
     }
 
-}
-
-// ======================================
-// ELEMENTS
-// ======================================
-
-const giftBox = document.getElementById("giftBox");
-const giftSection = document.getElementById("giftSection");
-
-const envelopeSection = document.getElementById("envelopeSection");
-const envelope = document.getElementById("envelope");
-
-const letterSection = document.getElementById("letterSection");
-const letterCard = document.getElementById("letterCard");
-
-const flowerContainer = document.getElementById("flowerContainer");
-
-let giftOpened = false;
-
-
-// ======================================
-// FLOWER FILES
-// ======================================
-
-const flowerImages = [
-
-    "F1.png",
-    "F2.png",
-    "F3.png",
-    "F4.png",
-    "F5.png",
-    "F6.png",
-    "F7.png",
-    "F8.png",
-    "F9.png",
-    "F10.png",
-    "F11.png"
-
-];
-
-
-// ======================================
-// OPEN GIFT
-// ======================================
-
-giftBox.addEventListener("click", openGift);
-
-function openGift(){
-
-    if(giftOpened) return;
-
-    giftOpened = true;
-
-    giftBox.classList.add("open");
-
-    giftBox.src = "giftboxopen.PNG";
-
-    createSparkles();
-
-    setTimeout(()=>{
-
-        explodeFlowers();
-
-    },500);
 
 }
-
-
-// ======================================
-// FLOWER EXPLOSION
-// ======================================
-
-function explodeFlowers(){
-
-    const rect = giftBox.getBoundingClientRect();
-
-    const startX = rect.left + rect.width/2;
-
-    const startY = rect.top + rect.height*0.30;
-
-    for(let i=0;i<140;i++){
-
-        const flower = document.createElement("img");
-
-        flower.className = "flower";
-
-        flower.src =
-        flowerImages[
-            Math.floor(Math.random()*flowerImages.length)
-        ];
-
-        flower.style.left = startX+"px";
-
-        flower.style.top = startY+"px";
-
-        const size = 35 + Math.random()*65;
-
-        flower.style.width = size+"px";
-
-        flowerContainer.appendChild(flower);
-
-        const angle = Math.random()*Math.PI*2;
-
-        const distance = 300 + Math.random()*700;
-
-        const x = Math.cos(angle)*distance;
-
-        const y = Math.sin(angle)*distance - 280;
-
-        const rotate = Math.random()*1080-540;
-
-        const delay = Math.random()*0.35;
-
-        requestAnimationFrame(()=>{
-
-            flower.style.transition =
-            `transform 2.6s cubic-bezier(.18,.89,.32,1.28) ${delay}s,
-             opacity .7s ease ${delay}s`;
-
-            flower.style.transform =
-            `translate(${x}px,${y}px)
-             rotate(${rotate}deg)
-             scale(${1+Math.random()*1.4})`;
-
-            flower.style.opacity = "1";
-
-        });
-
-        setTimeout(()=>{
-
-            flower.style.opacity="0";
-
-        },1800);
-
-        setTimeout(()=>{
-
-            flower.remove();
-
-        },3200);
-
-    }
-
-}
-
-
-    
-       
+</script>
