@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Cielo ❤️</title>
+<title></title>
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,20 +21,21 @@
 
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
+html,
+body{
 
-html,body{
+    width:100%;
+    height:100%;
 
-width:100%;
-height:100%;
-overflow:hidden;
+    overflow:hidden;
 
-font-family:'Poppins',sans-serif;
+    font-family:'Poppins',sans-serif;
 
 }
 
@@ -45,38 +46,36 @@ font-family:'Poppins',sans-serif;
 
 .background{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-background:url("bg.JPEG");
+    background:url("bg.JPEG");
 
-background-size:cover;
+    background-size:cover;
 
-background-position:center;
+    background-position:center;
 
-z-index:-10;
+    z-index:-10;
 
 }
 
 
 
 
-
-/* FLOWERS */
-
+/* FLOWER CONTAINER */
 
 #flowerContainer{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-overflow:hidden;
+    overflow:hidden;
 
-pointer-events:none;
+    pointer-events:none;
 
-z-index:30;
+    z-index:20;
 
 }
 
@@ -85,13 +84,13 @@ z-index:30;
 
 .flower{
 
-position:absolute;
+    position:absolute;
 
-opacity:0;
+    opacity:0;
 
-transform:
-translate(-50%,-50%)
-scale(.1);
+    transform:
+    translate(-50%,-50%)
+    scale(.05);
 
 }
 
@@ -101,533 +100,91 @@ scale(.1);
 
 /* GIFT */
 
-
 #giftSection{
 
-position:absolute;
+    position:absolute;
 
-top:50%;
+    top:50%;
 
-left:50%;
-
-
-transform:
-translate(-50%,-50%);
+    left:50%;
 
 
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
+    transform:
+    translate(-50%,-50%);
 
 
-z-index:20;
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+
+    z-index:10;
 
 }
+
 
 
 
 #giftBox{
 
-width:240px;
+    width:180px;
 
-cursor:pointer;
+    cursor:pointer;
 
-user-select:none;
-
-
-animation:
-giftFloat 2s infinite ease-in-out;
+    user-select:none;
 
 
-transition:1s;
+    animation:
+    floatGift 2s infinite ease-in-out;
 
 }
 
 
 
 
-#giftBox.open{
-
-
-animation:none;
-
-
-transform:
-scale(1.15);
-
-
-filter:
-drop-shadow(0 0 40px pink);
-
-
-}
-
-
-
-
-@keyframes giftFloat{
+@keyframes floatGift{
 
 
 0%,100%{
 
-transform:translateY(0);
+    transform:translateY(0);
 
 }
 
 
 50%{
 
-transform:translateY(-18px);
+    transform:translateY(-15px);
 
 }
 
 
 }
-
 
 
 
 
 #giftText{
 
+    margin-top:18px;
 
-margin-top:20px;
 
+    color:white;
 
-color:white;
 
+    font-family:'Great Vibes',cursive;
 
-font-size:22px;
 
+    font-size:45px;
 
-font-weight:600;
 
+    text-shadow:
 
+    0 0 10px pink,
 
-text-shadow:
-
-0 0 10px hotpink,
-
-0 0 20px hotpink;
-
-
-}
-
-
-
-
-
-
-
-/* FLOWER MESSAGE */
-
-
-#flowerMessage{
-
-
-position:fixed;
-
-
-top:75%;
-
-
-left:50%;
-
-
-transform:
-translate(-50%,-50%);
-
-
-
-font-family:'Great Vibes',cursive;
-
-
-font-size:40px;
-
-
-color:white;
-
-
-opacity:0;
-
-
-z-index:60;
-
-
-
-text-shadow:
-
-0 0 15px pink,
-
-0 0 30px pink;
-
-
-
-transition:1s;
-
-}
-
-
-
-
-
-/* ENVELOPE */
-
-
-#envelopeSection{
-
-
-position:fixed;
-
-
-inset:0;
-
-
-display:none;
-
-
-flex-direction:column;
-
-
-justify-content:center;
-
-
-align-items:center;
-
-
-
-opacity:0;
-
-
-z-index:50;
-
-
-transition:1s;
-
-
-}
-
-
-
-
-
-#envelope{
-
-
-width:220px;
-
-
-cursor:pointer;
-
-
-animation:
-envelopeFloat 2.5s infinite ease-in-out;
-
-
-
-transition:1s;
-
-
-}
-
-
-
-
-@keyframes envelopeFloat{
-
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-
-50%{
-
-transform:translateY(-15px);
-
-}
-
-
-}
-
-
-
-
-
-
-#envelopeText{
-
-
-margin-top:20px;
-
-
-color:white;
-
-
-font-size:20px;
-
-
-font-weight:600;
-
-
-
-text-shadow:
-
-0 0 10px pink,
-
-0 0 20px pink;
-
-
-}
-
-
-
-
-
-
-/* LETTER */
-
-
-#letterSection{
-
-
-position:fixed;
-
-
-inset:0;
-
-
-
-display:none;
-
-
-justify-content:center;
-
-
-align-items:center;
-
-
-
-background:
-rgba(0,0,0,.45);
-
-
-
-opacity:0;
-
-
-z-index:100;
-
-
-transition:1s;
-
-
-}
-
-
-
-
-
-#letterCard{
-
-
-position:relative;
-
-
-width:90%;
-
-
-max-width:700px;
-
-
-
-transform:
-translateY(250px)
-scale(.7);
-
-
-
-opacity:0;
-
-
-
-transition:
-1s cubic-bezier(.18,.89,.32,1.28);
-
-
-}
-
-
-
-
-#letterCard.show{
-
-
-transform:
-translateY(0)
-scale(1);
-
-
-
-opacity:1;
-
-
-}
-
-
-
-#letterImage{
-
-
-width:100%;
-
-
-display:block;
-
-
-border-radius:20px;
-
-
-
-box-shadow:
-
-0 20px 50px rgba(0,0,0,.4);
-
-
-}
-
-
-
-
-#letterContent{
-
-
-position:absolute;
-
-
-inset:0;
-
-
-
-display:flex;
-
-
-flex-direction:column;
-
-
-justify-content:center;
-
-
-align-items:center;
-
-
-text-align:center;
-
-
-
-padding:60px;
-
-
-}
-
-
-
-
-#letterContent h1{
-
-
-font-family:'Great Vibes',cursive;
-
-
-font-size:55px;
-
-
-color:#ff2e87;
-
-
-text-shadow:
-
-0 0 10px white;
-
-
-}
-
-
-
-
-#letterContent p{
-
-
-margin-top:25px;
-
-
-max-width:80%;
-
-
-font-size:22px;
-
-
-line-height:1.7;
-
-
-color:#444;
-
-
-}
-
-
-
-
-
-
-@media(max-width:600px){
-
-
-#giftBox{
-
-width:160px;
-
-}
-
-
-#envelope{
-
-width:160px;
-
-}
-
-
-#flowerMessage{
-
-font-size:30px;
-
-}
-
-
-#letterContent{
-
-padding:30px;
-
-}
-
-
-#letterContent h1{
-
-font-size:32px;
-
-}
-
-
-#letterContent p{
-
-font-size:16px;
-
-}
-
+    0 0 25px pink;
 
 }
 
@@ -654,25 +211,21 @@ font-size:16px;
 <img
 id="giftBox"
 src="giftbox.png"
-alt="Gift">
+alt="Gift Box">
 
 
 <p id="giftText">
-Open your surprise 🎁
+
+For Cielo ❤️
+
 </p>
 
 
 </div>
 
-
-
-
-<div id="flowerMessage">
-
-Flowers for you 🌹
-
-</div>
-
+<!-- =========================
+ENVELOPE
+========================= -->
 
 
 <div id="envelopeSection">
@@ -680,7 +233,7 @@ Flowers for you 🌹
 
 <img
 id="envelope"
-src="envelope.PNG"
+src="env.PNG"
 alt="Envelope">
 
 
@@ -695,6 +248,13 @@ A letter for you 💌
 
 
 
+
+
+<!-- =========================
+LETTER
+========================= -->
+
+
 <div id="letterSection">
 
 
@@ -703,7 +263,8 @@ A letter for you 💌
 
 <img
 id="letterImage"
-src="letter.PNG">
+src="letter.JPEG"
+alt="Letter">
 
 
 
@@ -711,13 +272,18 @@ src="letter.PNG">
 
 
 <h1>
+
 Happy National Girlfriend's Day ❤️
+
 </h1>
 
 
+
 <p>
+
 Forever grateful to have you as my girlfriend.
 I love you so much, hon.
+
 </p>
 
 
@@ -729,6 +295,334 @@ I love you so much, hon.
 
 </div>
 
+
+
+
+
+<style>
+
+
+/* =========================
+ENVELOPE
+========================= */
+
+
+#envelopeSection{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+
+    opacity:0;
+
+    z-index:50;
+
+    transition:1s;
+
+}
+
+
+
+
+#envelope{
+
+    width:200px;
+
+    cursor:pointer;
+
+    animation:
+    envelopeFloat 2s infinite ease-in-out;
+
+}
+
+
+
+@keyframes envelopeFloat{
+
+
+0%,100%{
+
+    transform:translateY(0);
+
+}
+
+
+50%{
+
+    transform:translateY(-15px);
+
+}
+
+
+}
+
+
+
+
+#envelopeText{
+
+    margin-top:20px;
+
+
+    color:white;
+
+
+    font-size:22px;
+
+
+    font-weight:600;
+
+
+    text-shadow:
+
+    0 0 10px pink,
+
+    0 0 20px pink;
+
+
+}
+
+
+
+
+
+
+/* =========================
+LETTER
+========================= */
+
+
+#letterSection{
+
+    position:fixed;
+
+    inset:0;
+
+
+    display:none;
+
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:rgba(0,0,0,.45);
+
+
+    opacity:0;
+
+
+    z-index:100;
+
+
+    transition:1s;
+
+
+}
+
+
+
+
+#letterCard{
+
+    width:90%;
+
+    max-width:700px;
+
+
+    position:relative;
+
+
+    transform:
+
+    translateY(250px)
+
+    scale(.6);
+
+
+    opacity:0;
+
+
+    transition:
+
+    1s cubic-bezier(.18,.89,.32,1.28);
+
+
+}
+
+
+
+
+#letterCard.show{
+
+
+    transform:
+
+    translateY(0)
+
+    scale(1);
+
+
+    opacity:1;
+
+
+}
+
+
+
+
+
+#letterImage{
+
+
+    width:100%;
+
+
+    display:block;
+
+
+    border-radius:20px;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.4);
+
+
+}
+
+
+
+
+
+#letterContent{
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    text-align:center;
+
+
+    padding:50px;
+
+
+}
+
+
+
+
+
+#letterContent h1{
+
+
+    font-family:'Great Vibes',cursive;
+
+
+    font-size:55px;
+
+
+    color:#ff2e87;
+
+
+}
+
+
+
+
+
+#letterContent p{
+
+
+    margin-top:20px;
+
+
+    max-width:80%;
+
+
+    font-size:22px;
+
+
+    color:#444;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+#giftBox{
+
+    width:150px;
+
+}
+
+
+#giftText{
+
+    font-size:38px;
+
+}
+
+
+#envelope{
+
+    width:160px;
+
+}
+
+
+#letterContent h1{
+
+    font-size:32px;
+
+}
+
+
+#letterContent p{
+
+    font-size:16px;
+
+}
+
+
+}
+
+
+</style>
+
 <script>
 
 
@@ -736,27 +630,32 @@ I love you so much, hon.
 // ELEMENTS
 // =========================
 
+
 const giftBox = document.getElementById("giftBox");
+
 const giftSection = document.getElementById("giftSection");
 
 const flowerContainer = document.getElementById("flowerContainer");
-const flowerMessage = document.getElementById("flowerMessage");
 
 const envelopeSection = document.getElementById("envelopeSection");
+
 const envelope = document.getElementById("envelope");
 
 const letterSection = document.getElementById("letterSection");
-const letterCard = document.getElementById("letterCard");
 
+const letterCard = document.getElementById("letterCard");
 
 
 let opened = false;
 
 
 
+
+
 // =========================
 // FLOWERS
 // =========================
+
 
 const flowerImages = [
 
@@ -778,68 +677,62 @@ const flowerImages = [
 
 
 
+
 // =========================
 // SPARKLES
 // =========================
 
-function createSparkles(x,y){
+
+function sparkles(x,y){
 
 
-for(let i=0;i<35;i++){
+for(let i=0;i<40;i++){
 
 
-const spark=document.createElement("div");
+let s=document.createElement("div");
 
 
-spark.style.position="fixed";
+s.style.position="fixed";
 
-spark.style.left=x+"px";
+s.style.left=x+"px";
 
-spark.style.top=y+"px";
-
-
-spark.style.width=
-(4+Math.random()*6)+"px";
+s.style.top=y+"px";
 
 
-spark.style.height=
-spark.style.width;
+s.style.width="6px";
+
+s.style.height="6px";
 
 
-spark.style.borderRadius="50%";
+s.style.background="white";
 
 
-spark.style.background="white";
+s.style.borderRadius="50%";
 
 
-spark.style.boxShadow=
-"0 0 15px white";
+s.style.boxShadow="0 0 15px white";
 
 
-spark.style.zIndex="200";
+s.style.zIndex="200";
 
 
-document.body.appendChild(spark);
+document.body.appendChild(s);
 
 
 
-let angle =
-Math.random()*Math.PI*2;
+let angle=Math.random()*Math.PI*2;
 
-
-let distance =
-80+Math.random()*180;
+let distance=80+Math.random()*150;
 
 
 
 requestAnimationFrame(()=>{
 
 
-spark.style.transition=
-"all 1s ease-out";
+s.style.transition="1s";
 
 
-spark.style.transform=
+s.style.transform=
 `
 translate(
 ${Math.cos(angle)*distance}px,
@@ -848,7 +741,7 @@ ${Math.sin(angle)*distance}px
 `;
 
 
-spark.style.opacity="0";
+s.style.opacity="0";
 
 
 });
@@ -857,7 +750,7 @@ spark.style.opacity="0";
 
 setTimeout(()=>{
 
-spark.remove();
+s.remove();
 
 },1000);
 
@@ -867,6 +760,145 @@ spark.remove();
 
 
 }
+
+
+
+
+
+
+
+// =========================
+// FLOWER EXPLOSION FROM BOX
+// =========================
+
+
+function flowerExplosion(){
+
+
+const rect =
+giftBox.getBoundingClientRect();
+
+
+
+const startX =
+rect.left + rect.width/2;
+
+
+const startY =
+rect.top + rect.height*0.15;
+
+
+
+for(let i=0;i<180;i++){
+
+
+
+let flower=document.createElement("img");
+
+
+flower.className="flower";
+
+
+flower.src=
+flowerImages[
+Math.floor(Math.random()*flowerImages.length)
+];
+
+
+
+flower.style.left=startX+"px";
+
+flower.style.top=startY+"px";
+
+
+
+let size=
+30+Math.random()*80;
+
+
+flower.style.width=size+"px";
+
+
+
+flowerContainer.appendChild(flower);
+
+
+
+let angle=
+Math.random()*Math.PI*2;
+
+
+
+let distance=
+300+Math.random()*800;
+
+
+
+let x=
+Math.cos(angle)*distance;
+
+
+
+let y=
+Math.sin(angle)*distance;
+
+
+
+requestAnimationFrame(()=>{
+
+
+flower.style.transition=
+
+`
+transform 2.8s cubic-bezier(.18,.89,.32,1.28),
+opacity .8s
+`;
+
+
+
+flower.style.transform=
+
+`
+translate(${x}px,${y}px)
+rotate(${Math.random()*720}deg)
+scale(${1.5+Math.random()})
+`;
+
+
+
+flower.style.opacity="1";
+
+
+
+});
+
+
+
+setTimeout(()=>{
+
+
+flower.style.opacity="0";
+
+
+},3500);
+
+
+
+setTimeout(()=>{
+
+
+flower.remove();
+
+
+},4500);
+
+
+
+}
+
+
+}
+
 
 
 
@@ -888,10 +920,8 @@ if(opened)return;
 opened=true;
 
 
-giftBox.classList.add("open");
 
-
-giftBox.src="giftboxopen.PNG";
+giftBox.src="giftboxopen.png";
 
 
 
@@ -900,203 +930,23 @@ giftBox.getBoundingClientRect();
 
 
 
-createSparkles(
+sparkles(
 
 rect.left+rect.width/2,
 
-rect.top+rect.height/3
+rect.top+rect.height/2
 
 );
 
 
 
-explodeFlowers();
+flowerExplosion();
+
 
 
 
 
 setTimeout(()=>{
-
-flowerMessage.style.opacity="1";
-
-},1200);
-
-
-
-
-setTimeout(()=>{
-
-flowerMessage.style.opacity="0";
-
-},3000);
-
-
-
-
-setTimeout(()=>{
-
-hideGift();
-
-},3500);
-
-
-
-
-setTimeout(()=>{
-
-showEnvelope();
-
-},4500);
-
-
-
-});
-
-
-
-
-
-
-// =========================
-// FLOWER EXPLOSION
-// =========================
-
-
-function explodeFlowers(){
-
-
-const rect =
-giftBox.getBoundingClientRect();
-
-
-
-const startX =
-rect.left + rect.width/2;
-
-
-const startY =
-rect.top + rect.height*.3;
-
-
-
-
-for(let i=0;i<130;i++){
-
-
-
-const flower =
-document.createElement("img");
-
-
-
-flower.className="flower";
-
-
-
-flower.src =
-flowerImages[
-Math.floor(
-Math.random()*flowerImages.length
-)
-];
-
-
-
-flower.style.left=startX+"px";
-
-
-flower.style.top=startY+"px";
-
-
-
-flower.style.width=
-(40+Math.random()*60)+"px";
-
-
-
-flowerContainer.appendChild(flower);
-
-
-
-const angle =
-Math.random()*Math.PI*2;
-
-
-
-const distance =
-300+Math.random()*700;
-
-
-
-
-requestAnimationFrame(()=>{
-
-
-flower.style.transition=
-"all 2.5s cubic-bezier(.18,.89,.32,1.28)";
-
-
-
-flower.style.transform=
-`
-translate(
-${Math.cos(angle)*distance}px,
-${Math.sin(angle)*distance-250}px
-)
-
-rotate(${Math.random()*720}deg)
-
-scale(1.5)
-`;
-
-
-
-flower.style.opacity="1";
-
-
-
-});
-
-
-
-
-setTimeout(()=>{
-
-
-flower.style.opacity="0";
-
-
-},2500);
-
-
-
-
-setTimeout(()=>{
-
-
-flower.remove();
-
-
-},3500);
-
-
-
-}
-
-
-}
-
-
-
-
-
-
-// =========================
-// HIDE GIFT
-// =========================
-
-
-function hideGift(){
 
 
 giftSection.style.transition="1s";
@@ -1110,29 +960,17 @@ giftSection.style.transform=
 
 
 
+},3500);
+
+
+
+
+
 setTimeout(()=>{
 
 
 giftSection.style.display="none";
 
-
-},1000);
-
-
-
-}
-
-
-
-
-
-
-// =========================
-// SHOW ENVELOPE
-// =========================
-
-
-function showEnvelope(){
 
 
 envelopeSection.style.display="flex";
@@ -1149,7 +987,12 @@ envelopeSection.style.opacity="1";
 
 
 
-}
+},4500);
+
+
+
+});
+
 
 
 
@@ -1158,15 +1001,18 @@ envelopeSection.style.opacity="1";
 
 
 // =========================
-// ENVELOPE CLICK
+// OPEN ENVELOPE
 // =========================
 
 
 envelope.addEventListener("click",()=>{
 
 
+envelope.style.transition="1s";
+
+
 envelope.style.transform=
-"scale(.2) rotate(20deg)";
+"scale(.2) rotate(25deg)";
 
 
 envelope.style.opacity="0";
@@ -1179,30 +1025,6 @@ setTimeout(()=>{
 envelopeSection.style.display="none";
 
 
-showLetter();
-
-
-
-},800);
-
-
-
-});
-
-
-
-
-
-
-
-// =========================
-// SHOW LETTER
-// =========================
-
-
-function showLetter(){
-
-
 letterSection.style.display="flex";
 
 
@@ -1213,124 +1035,25 @@ setTimeout(()=>{
 letterSection.style.opacity="1";
 
 
+letterCard.classList.add("show");
+
+
+
 },100);
 
 
 
-setTimeout(()=>{
+},900);
 
-
-letterCard.classList.add("show");
-
-
-heartBurst();
-
-
-},400);
-
-
-
-}
-
-
-
-
-
-
-
-// =========================
-// HEART BURST
-// =========================
-
-
-function heartBurst(){
-
-
-for(let i=0;i<25;i++){
-
-
-
-const heart=document.createElement("div");
-
-
-heart.innerHTML="❤";
-
-
-heart.style.position="fixed";
-
-
-heart.style.left="50%";
-
-
-heart.style.top="50%";
-
-
-heart.style.fontSize=
-"25px";
-
-
-heart.style.color="hotpink";
-
-
-heart.style.zIndex="300";
-
-
-document.body.appendChild(heart);
-
-
-
-const x =
-(Math.random()-.5)*400;
-
-
-const y =
-(Math.random()-.5)*400;
-
-
-
-
-requestAnimationFrame(()=>{
-
-
-heart.style.transition=
-"2s ease-out";
-
-
-heart.style.transform=
-`
-translate(${x}px,${y}px)
-scale(1.5)
-`;
-
-
-
-heart.style.opacity="0";
 
 
 });
 
 
 
-setTimeout(()=>{
-
-
-heart.remove();
-
-
-},2000);
-
-
-
-}
-
-
-}
-
 
 
 </script>
 
-
 </body>
-
 </html>
