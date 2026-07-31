@@ -19,112 +19,110 @@
 
 <style>
 
-/* =========================
-RESET
-========================= */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-
-html,
-body{
-
-    width:100%;
-    height:100%;
-    overflow:hidden;
-
-    font-family:'Poppins',sans-serif;
-
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 
 
-/* =========================
-BACKGROUND
-========================= */
+html,body{
+
+width:100%;
+height:100%;
+overflow:hidden;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+
+
+
+/* BACKGROUND */
 
 .background{
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+inset:0;
 
-    background:url("bg.JPEG");
+background:url("bg.JPEG");
 
-    background-size:cover;
+background-size:cover;
 
-    background-position:center;
+background-position:center;
 
-    z-index:-10;
+z-index:-10;
 
 }
 
 
 
-/* =========================
-FLOWERS
-========================= */
+
+
+/* FLOWERS */
+
 
 #flowerContainer{
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+inset:0;
 
-    overflow:hidden;
+overflow:hidden;
 
-    pointer-events:none;
+pointer-events:none;
 
-    z-index:30;
+z-index:30;
 
 }
+
 
 
 
 .flower{
 
-    position:absolute;
+position:absolute;
 
-    opacity:0;
+opacity:0;
 
-    transform:
-    translate(-50%,-50%)
-    scale(.1);
+transform:
+translate(-50%,-50%)
+scale(.1);
 
 }
 
 
 
-/* =========================
-GIFT
-========================= */
+
+
+/* GIFT */
 
 
 #giftSection{
 
-    position:absolute;
+position:absolute;
 
-    top:50%;
+top:50%;
 
-    left:50%;
-
-
-    transform:
-    translate(-50%,-50%);
+left:50%;
 
 
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
+transform:
+translate(-50%,-50%);
 
 
-    z-index:20;
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+
+z-index:20;
 
 }
 
@@ -132,172 +130,205 @@ GIFT
 
 #giftBox{
 
-    width:240px;
+width:240px;
 
-    cursor:pointer;
+cursor:pointer;
 
-    user-select:none;
-
-
-    animation:
-    giftFloat 2s infinite ease-in-out;
+user-select:none;
 
 
-    transition:1s;
+animation:
+giftFloat 2s infinite ease-in-out;
+
+
+transition:1s;
 
 }
+
 
 
 
 #giftBox.open{
 
-    animation:none;
 
-    transform:scale(1.15);
+animation:none;
 
-    filter:
-    drop-shadow(0 0 40px pink);
+
+transform:
+scale(1.15);
+
+
+filter:
+drop-shadow(0 0 40px pink);
+
 
 }
+
 
 
 
 @keyframes giftFloat{
 
-    0%,100%{
 
-        transform:translateY(0);
+0%,100%{
 
-    }
-
-
-    50%{
-
-        transform:translateY(-18px);
-
-    }
+transform:translateY(0);
 
 }
+
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+
+}
+
 
 
 
 
 #giftText{
 
-    margin-top:20px;
 
-    color:white;
-
-    font-size:22px;
-
-    font-weight:600;
+margin-top:20px;
 
 
-    text-shadow:
+color:white;
 
-    0 0 10px hotpink,
 
-    0 0 20px hotpink;
+font-size:22px;
+
+
+font-weight:600;
+
+
+
+text-shadow:
+
+0 0 10px hotpink,
+
+0 0 20px hotpink;
+
 
 }
 
 
 
 
-/* =========================
-FLOWER MESSAGE
-========================= */
+
+
+
+/* FLOWER MESSAGE */
 
 
 #flowerMessage{
 
-    position:fixed;
 
-    top:75%;
-
-    left:50%;
+position:fixed;
 
 
-    transform:
-    translate(-50%,-50%);
+top:75%;
 
 
-    color:white;
+left:50%;
 
 
-    font-family:'Great Vibes',cursive;
-
-    font-size:38px;
-
-
-    opacity:0;
+transform:
+translate(-50%,-50%);
 
 
-    z-index:60;
+
+font-family:'Great Vibes',cursive;
 
 
-    text-shadow:
-
-    0 0 15px pink,
-
-    0 0 30px pink;
+font-size:40px;
 
 
-    transition:1s;
+color:white;
+
+
+opacity:0;
+
+
+z-index:60;
+
+
+
+text-shadow:
+
+0 0 15px pink,
+
+0 0 30px pink;
+
+
+
+transition:1s;
 
 }
 
 
 
 
-/* =========================
-ENVELOPE
-========================= */
+
+/* ENVELOPE */
 
 
 #envelopeSection{
 
-    position:fixed;
 
-    inset:0;
-
-
-    display:none;
+position:fixed;
 
 
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
+inset:0;
 
 
-    opacity:0;
+display:none;
 
 
-    z-index:50;
+flex-direction:column;
 
 
-    transition:1s;
+justify-content:center;
+
+
+align-items:center;
+
+
+
+opacity:0;
+
+
+z-index:50;
+
+
+transition:1s;
+
 
 }
+
 
 
 
 
 #envelope{
 
-    width:220px;
+
+width:220px;
 
 
-    cursor:pointer;
+cursor:pointer;
 
 
-    animation:
-    envelopeFloat 2.5s infinite ease-in-out;
+animation:
+envelopeFloat 2.5s infinite ease-in-out;
 
 
-    transition:1s;
+
+transition:1s;
+
 
 }
 
@@ -307,20 +338,23 @@ ENVELOPE
 @keyframes envelopeFloat{
 
 
-    0%,100%{
+0%,100%{
 
-        transform:translateY(0);
-
-    }
-
-
-    50%{
-
-        transform:translateY(-15px);
-
-    }
+transform:translateY(0);
 
 }
+
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+
+}
+
+
 
 
 
@@ -328,62 +362,69 @@ ENVELOPE
 #envelopeText{
 
 
-    margin-top:20px;
+margin-top:20px;
 
 
-    color:white;
+color:white;
 
 
-    font-size:20px;
+font-size:20px;
 
 
-    font-weight:600;
+font-weight:600;
 
 
 
-    text-shadow:
+text-shadow:
 
-    0 0 10px pink,
+0 0 10px pink,
 
-    0 0 20px pink;
+0 0 20px pink;
+
 
 }
 
 
 
 
-/* =========================
-LETTER
-========================= */
+
+
+/* LETTER */
 
 
 #letterSection{
 
 
-    position:fixed;
-
-    inset:0;
+position:fixed;
 
 
-    display:none;
+inset:0;
 
 
-    justify-content:center;
 
-    align-items:center;
-
-
-    background:
-    rgba(0,0,0,.45);
+display:none;
 
 
-    opacity:0;
+justify-content:center;
 
 
-    z-index:100;
+align-items:center;
 
 
-    transition:1s;
+
+background:
+rgba(0,0,0,.45);
+
+
+
+opacity:0;
+
+
+z-index:100;
+
+
+transition:1s;
+
 
 }
 
@@ -394,30 +435,29 @@ LETTER
 #letterCard{
 
 
-    position:relative;
+position:relative;
 
 
-    width:90%;
+width:90%;
 
 
-    max-width:700px;
-
-
-
-    transform:
-
-    translateY(250px)
-
-    scale(.7);
+max-width:700px;
 
 
 
-    opacity:0;
+transform:
+translateY(250px)
+scale(.7);
 
 
-    transition:
 
-    1s cubic-bezier(.18,.89,.32,1.28);
+opacity:0;
+
+
+
+transition:
+1s cubic-bezier(.18,.89,.32,1.28);
+
 
 }
 
@@ -427,38 +467,38 @@ LETTER
 #letterCard.show{
 
 
-    transform:
-
-    translateY(0)
-
-    scale(1);
+transform:
+translateY(0)
+scale(1);
 
 
-    opacity:1;
+
+opacity:1;
+
 
 }
-
 
 
 
 #letterImage{
 
 
-    width:100%;
+width:100%;
 
 
-    display:block;
+display:block;
 
 
-    border-radius:20px;
+border-radius:20px;
 
 
-    box-shadow:
 
-    0 20px 50px rgba(0,0,0,.4);
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.4);
+
 
 }
-
 
 
 
@@ -466,31 +506,33 @@ LETTER
 #letterContent{
 
 
-    position:absolute;
+position:absolute;
 
 
-    inset:0;
+inset:0;
 
 
-    display:flex;
+
+display:flex;
 
 
-    flex-direction:column;
+flex-direction:column;
 
 
-    justify-content:center;
+justify-content:center;
 
 
-    align-items:center;
+align-items:center;
 
 
-    text-align:center;
+text-align:center;
 
 
-    padding:60px;
+
+padding:60px;
+
 
 }
-
 
 
 
@@ -498,13 +540,18 @@ LETTER
 #letterContent h1{
 
 
-    font-family:'Great Vibes',cursive;
+font-family:'Great Vibes',cursive;
 
 
-    font-size:55px;
+font-size:55px;
 
 
-    color:#ff2e87;
+color:#ff2e87;
+
+
+text-shadow:
+
+0 0 10px white;
 
 
 }
@@ -515,29 +562,26 @@ LETTER
 #letterContent p{
 
 
-    margin-top:25px;
+margin-top:25px;
 
 
-    max-width:80%;
+max-width:80%;
 
 
-    font-size:22px;
+font-size:22px;
 
 
-    line-height:1.7;
+line-height:1.7;
 
 
-    color:#444;
+color:#444;
+
 
 }
 
 
 
 
-
-/* =========================
-MOBILE
-========================= */
 
 
 @media(max-width:600px){
@@ -545,55 +589,51 @@ MOBILE
 
 #giftBox{
 
-    width:160px;
+width:160px;
 
 }
-
 
 
 #envelope{
 
-    width:160px;
+width:160px;
 
 }
-
 
 
 #flowerMessage{
 
-    font-size:30px;
+font-size:30px;
 
 }
-
 
 
 #letterContent{
 
-    padding:30px;
+padding:30px;
 
 }
-
 
 
 #letterContent h1{
 
-    font-size:32px;
+font-size:32px;
 
 }
-
 
 
 #letterContent p{
 
-    font-size:16px;
+font-size:16px;
 
 }
 
 
 }
+
+
 
 </style>
-
 
 </head>
 
@@ -601,26 +641,20 @@ MOBILE
 <body>
 
 
-<!-- BACKGROUND -->
-
 <div class="background"></div>
 
-
-
-<!-- FLOWERS -->
 
 <div id="flowerContainer"></div>
 
 
 
-<!-- GIFT -->
-
 <div id="giftSection">
 
-<img 
+
+<img
 id="giftBox"
-src="giftbox.png"
-alt="Gift Box">
+src="giftbox.PNG"
+alt="Gift">
 
 
 <p id="giftText">
@@ -632,7 +666,6 @@ Open your surprise 🎁
 
 
 
-<!-- FLOWER MESSAGE -->
 
 <div id="flowerMessage">
 
@@ -641,9 +674,6 @@ Flowers for you 🌹
 </div>
 
 
-
-
-<!-- ENVELOPE -->
 
 <div id="envelopeSection">
 
@@ -665,10 +695,6 @@ A letter for you 💌
 
 
 
-
-
-<!-- LETTER -->
-
 <div id="letterSection">
 
 
@@ -677,8 +703,7 @@ A letter for you 💌
 
 <img
 id="letterImage"
-src="letter.PNG"
-alt="Letter">
+src="letter.PNG">
 
 
 
@@ -686,17 +711,13 @@ alt="Letter">
 
 
 <h1>
-
 Happy National Girlfriend's Day ❤️
-
 </h1>
 
 
 <p>
-
 Forever grateful to have you as my girlfriend.
 I love you so much, hon.
-
 </p>
 
 
@@ -708,11 +729,8 @@ I love you so much, hon.
 
 </div>
 
-
-
-
-
 <script>
+
 
 // =========================
 // ELEMENTS
@@ -731,12 +749,13 @@ const letterSection = document.getElementById("letterSection");
 const letterCard = document.getElementById("letterCard");
 
 
+
 let opened = false;
 
 
 
 // =========================
-// FLOWER FILES
+// FLOWERS
 // =========================
 
 const flowerImages = [
@@ -754,6 +773,7 @@ const flowerImages = [
 "F11.png"
 
 ];
+
 
 
 
@@ -779,7 +799,7 @@ spark.style.top=y+"px";
 
 
 spark.style.width=
-(5+Math.random()*6)+"px";
+(4+Math.random()*6)+"px";
 
 
 spark.style.height=
@@ -803,10 +823,12 @@ document.body.appendChild(spark);
 
 
 
-const angle=Math.random()*Math.PI*2;
+let angle =
+Math.random()*Math.PI*2;
 
 
-const distance=80+Math.random()*180;
+let distance =
+80+Math.random()*180;
 
 
 
@@ -835,9 +857,7 @@ spark.style.opacity="0";
 
 setTimeout(()=>{
 
-
 spark.remove();
-
 
 },1000);
 
@@ -846,8 +866,10 @@ spark.remove();
 }
 
 
-
 }
+
+
+
 
 
 
@@ -866,7 +888,6 @@ if(opened)return;
 opened=true;
 
 
-
 giftBox.classList.add("open");
 
 
@@ -877,10 +898,439 @@ giftBox.src="giftboxopen.PNG";
 const rect =
 giftBox.getBoundingClientRect();
 
+
+
+createSparkles(
+
+rect.left+rect.width/2,
+
+rect.top+rect.height/3
+
+);
+
+
+
+explodeFlowers();
+
+
+
+
+setTimeout(()=>{
+
+flowerMessage.style.opacity="1";
+
+},1200);
+
+
+
+
+setTimeout(()=>{
+
+flowerMessage.style.opacity="0";
+
+},3000);
+
+
+
+
+setTimeout(()=>{
+
+hideGift();
+
+},3500);
+
+
+
+
+setTimeout(()=>{
+
+showEnvelope();
+
+},4500);
+
+
+
+});
+
+
+
+
+
+
+// =========================
+// FLOWER EXPLOSION
+// =========================
+
+
+function explodeFlowers(){
+
+
+const rect =
+giftBox.getBoundingClientRect();
+
+
+
+const startX =
+rect.left + rect.width/2;
+
+
+const startY =
+rect.top + rect.height*.3;
+
+
+
+
+for(let i=0;i<130;i++){
+
+
+
+const flower =
+document.createElement("img");
+
+
+
+flower.className="flower";
+
+
+
+flower.src =
+flowerImages[
+Math.floor(
+Math.random()*flowerImages.length
+)
+];
+
+
+
+flower.style.left=startX+"px";
+
+
+flower.style.top=startY+"px";
+
+
+
+flower.style.width=
+(40+Math.random()*60)+"px";
+
+
+
+flowerContainer.appendChild(flower);
+
+
+
+const angle =
+Math.random()*Math.PI*2;
+
+
+
+const distance =
+300+Math.random()*700;
+
+
+
+
+requestAnimationFrame(()=>{
+
+
+flower.style.transition=
+"all 2.5s cubic-bezier(.18,.89,.32,1.28)";
+
+
+
+flower.style.transform=
+`
+translate(
+${Math.cos(angle)*distance}px,
+${Math.sin(angle)*distance-250}px
+)
+
+rotate(${Math.random()*720}deg)
+
+scale(1.5)
+`;
+
+
+
+flower.style.opacity="1";
+
+
+
+});
+
+
+
+
+setTimeout(()=>{
+
+
+flower.style.opacity="0";
+
+
+},2500);
+
+
+
+
+setTimeout(()=>{
+
+
+flower.remove();
+
+
+},3500);
+
+
+
+}
+
+
+}
+
+
+
+
+
+
+// =========================
+// HIDE GIFT
+// =========================
+
+
+function hideGift(){
+
+
+giftSection.style.transition="1s";
+
+
+giftSection.style.opacity="0";
+
+
+giftSection.style.transform=
+"translate(-50%,-50%) scale(.3)";
+
+
+
+setTimeout(()=>{
+
+
+giftSection.style.display="none";
+
+
+},1000);
+
+
+
+}
+
+
+
+
+
+
+// =========================
+// SHOW ENVELOPE
+// =========================
+
+
+function showEnvelope(){
+
+
+envelopeSection.style.display="flex";
+
+
+
+setTimeout(()=>{
+
+
+envelopeSection.style.opacity="1";
+
+
+},100);
+
+
+
+}
+
+
+
+
+
+
+
+// =========================
+// ENVELOPE CLICK
+// =========================
+
+
+envelope.addEventListener("click",()=>{
+
+
+envelope.style.transform=
+"scale(.2) rotate(20deg)";
+
+
+envelope.style.opacity="0";
+
+
+
+setTimeout(()=>{
+
+
+envelopeSection.style.display="none";
+
+
+showLetter();
+
+
+
+},800);
+
+
+
+});
+
+
+
+
+
+
+
+// =========================
+// SHOW LETTER
+// =========================
+
+
+function showLetter(){
+
+
+letterSection.style.display="flex";
+
+
+
+setTimeout(()=>{
+
+
+letterSection.style.opacity="1";
+
+
+},100);
+
+
+
+setTimeout(()=>{
+
+
+letterCard.classList.add("show");
+
+
+heartBurst();
+
+
+},400);
+
+
+
+}
+
+
+
+
+
+
+
+// =========================
+// HEART BURST
+// =========================
+
+
+function heartBurst(){
+
+
+for(let i=0;i<25;i++){
+
+
+
+const heart=document.createElement("div");
+
+
+heart.innerHTML="❤";
+
+
+heart.style.position="fixed";
+
+
+heart.style.left="50%";
+
+
+heart.style.top="50%";
+
+
+heart.style.fontSize=
+"25px";
+
+
+heart.style.color="hotpink";
+
+
+heart.style.zIndex="300";
+
+
+document.body.appendChild(heart);
+
+
+
+const x =
+(Math.random()-.5)*400;
+
+
+const y =
+(Math.random()-.5)*400;
+
+
+
+
+requestAnimationFrame(()=>{
+
+
+heart.style.transition=
+"2s ease-out";
+
+
+heart.style.transform=
+`
+translate(${x}px,${y}px)
+scale(1.5)
+`;
+
+
+
+heart.style.opacity="0";
+
+
+});
+
+
+
+setTimeout(()=>{
+
+
+heart.remove();
+
+
+},2000);
+
+
+
+}
+
+
+}
+
+
+
 </script>
 
 
 </body>
-
 
 </html>
